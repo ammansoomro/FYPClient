@@ -43,7 +43,7 @@ const getUniqueCodes = async () => {
 
 const searchOnCourseName = async (name) => {
     try {
-        const res = await axios.get(`/courses/search/${name}`, {
+        const res = await axios.get(process.env.REACT_APP_API + `/courses/search/${name}`, {
             headers: {
                 token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
             },
@@ -84,7 +84,7 @@ const getTotalCourses = async () => {
 
 const getCoursesByPage = async (page) => {
     try {
-        const res = await axios.get(`/courses/page/${page}`, {
+        const res = await axios.get(process.env.REACT_APP_API + `/courses/page/${page}`, {
             headers: {
                 token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken
             }
@@ -97,7 +97,7 @@ const getCoursesByPage = async (page) => {
 
 const getTotalCoursesByCode = async (code) => {
     try {
-        const res = await axios.get(`/courses/count/${code}`, {
+        const res = await axios.get(process.env.REACT_APP_API + `/courses/count/${code}`, {
             headers: {
                 token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken
             }
@@ -110,7 +110,7 @@ const getTotalCoursesByCode = async (code) => {
 
 const getCoursesByPageAndCode = async (page, code) => {
     try {
-        const res = await axios.get(`/courses/page/${page}/${code}`, {
+        const res = await axios.get(process.env.REACT_APP_API + `/courses/page/${page}/${code}`, {
             headers: {
                 token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken
             }

@@ -17,7 +17,7 @@ const ProjectPage = () => {
     }, [id])
 
     const fetchProject = async (id) => {
-        const res = await axios.get(`/projects/find/${id}`, {
+        const res = await axios.get(process.env.REACT_APP_API + `/projects/find/${id}`, {
             headers: {
                 token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
             },

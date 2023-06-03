@@ -12,7 +12,7 @@ export async function getSocieties(setSocieties) {
 }
 
 export async function getSocietiesOnSearch(search, setSocieties) {
-  const res = await axios.get(`/societies/search/${search}`, {
+  const res = await axios.get(process.env.REACT_APP_API + `/societies/search/${search}`, {
     headers: {
       token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
     }

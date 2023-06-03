@@ -83,7 +83,7 @@ export const getFacultyByDepartmentAndPage = async (department, page) => {
 // Get Faculty on Search
 export const getFacultyOnSearch = async (search) => {
     try {
-        const res = await axios.get(`/facultys/search/${search}`, {
+        const res = await axios.get(process.env.REACT_APP_API + `/facultys/search/${search}`, {
             headers: {
               token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
             }
